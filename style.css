@@ -1,0 +1,178 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-padding-top: 1rem;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    color: #FFFFFF;
+}
+img{
+    width: 100%;
+}
+main{
+    width: 100%;
+    height: 100vh;
+    background-image: url("assets/Altintas_Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;background-position: center left;
+}
+/*custom scrolbar*/
+html::-webkit-scrollbar{
+    width: 0.5rem;
+    background: #000000;
+}
+html::-webkit-scrollbar-thumb{
+    border-radius: 5rem;
+    background: #FFFFFF;
+}
+/*navbar*/
+.container{
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+header{
+    display: block;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+header.shadow{
+    background: #0F0F0F;
+    transition: 0.5s;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 35px;
+}
+#menu-icon{
+    font-size: 30px;
+    cursor: pointer;
+    color: #D90429;
+    display: none;
+}
+.logo{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+.logo span{
+    color: #D90429;
+}
+.navbar{
+    display: flex;
+    column-gap: 2rem;
+}
+.navbar a{
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.navbar a:hover, .navbar .active{
+    color: #D90429;
+    border-bottom: 3px solid #D90429;
+}
+/*home*/
+section{
+    padding: 2rem 9%;
+}
+.home{
+    margin: auto;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.home-text{
+    /*padding-left: 130px;*/
+}
+.home-text h1{
+    font-size: 3.5rem;
+}
+.home-text span{
+    color: #D90429;
+}
+.home-text p{
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin: 0.5rem 0 1.2rem;
+}
+.btn{
+    padding: 10px 30px;
+    background: #D90429;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+.btn:hover{
+    background: #fd052f;
+}
+/*about*/
+.about{
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+}
+.heading{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+.about-img img{
+    width: 350px;
+    height: 450px;
+    border-radius: 15px;
+    margin-right: 150px;
+}
+.about-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.about-text{
+    width: 40%;
+    margin-left: 150px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.about-text span{
+    color: #D90429;
+    font-size: 1.5rem;
+}
+/*icons container*/
+.icons-container{
+    background: #0F0F0F;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.icons-container .icons{
+    background: #000000;
+    border: .1rem solid rgba(0,0,0,.1);
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    flex: 1 1 25rem;
+}
+.icons-container .icons i{
+    font-size: 2.5rem;
+    margin: 2rem;
+}
+.icons-container .icons h3{
+    color: #D90429;
+    font-size: 1.5rem;
+}
+.icons-container .icons span{
+    color: #ffffff;
+    font-size: 1.3rem;
+}

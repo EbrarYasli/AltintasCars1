@@ -207,5 +207,50 @@ section{
 }
 .car-container .box .car-list{
     font-size: 1rem;
-
+}
+/*contact pagina*/
+.contact{
+    background: #0F0F0F;
+    color: #FFFFFF;
+    border-top: 2px solid #d90429;
+}
+.contact-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.contact-container .logo{
+    margin: auto;
+    color: #FFFFFF;
+}
+.contact-container .contact-box{
+    display: flex;
+    flex-direction: column;
+}
+.contact-box h3{
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+.contact-box a{
+    color: #818181;
+    margin-bottom: 10px;
+}
+.contact-box a:hover{
+    color: #d90429;
+}
+.contact-box .active{
+    color: #d90429;
+}
+/*footer*/
+footer{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background-color: #000000;
+    font-weight: 300;
+}
+footer a{
+    text-decoration: none;
+    color: #FFFFFF;
 }

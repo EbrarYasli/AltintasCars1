@@ -93,7 +93,6 @@ section{
     align-items: center;
 }
 .home-text{
-    /*padding-left: 130px;*/
 }
 .home-text h1{
     font-size: 3.5rem;
@@ -126,27 +125,38 @@ section{
     font-size: 2rem;
     margin-bottom: 50px;
 }
-.about-img img{
-    width: 350px;
-    height: 450px;
-    border-radius: 15px;
-    margin-right: 150px;
-}
-.about-content{
+.about .row{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
 }
-.about-text{
-    width: 40%;
-    margin-left: 150px;
-    margin-top: auto;
-    margin-bottom: auto;
+.about .row .foto-container{
+    position: relative;
 }
-.about-text span{
-    color: #D90429;
-    font-size: 1.5rem;
+.about .row .foto-container img{
+    border-radius: 1rem;
+    width: 350px;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
+.about .row .content-about{
+    flex: 1 1 40rem;
+}
+.about .row .content-about h3{
+    font-size: 2rem;
+    color: #d90429;
+    font-weight: normal;
+}.about .row .content-about p{
+     font-size: 1.5rem;
+     color: #FFFFFF;
+     padding: .5rem 0;
+     padding-top: 1rem;
+     line-height: 1.5;
+ }
 /*icons container*/
 .icons-container{
     background: #0F0F0F;
@@ -239,9 +249,7 @@ section{
 .contact-box a:hover{
     color: #d90429;
 }
-.contact-box .active{
-    color: #d90429;
-}
+
 /*footer*/
 footer{
     width: 100%;
@@ -253,4 +261,25 @@ footer{
 footer a{
     text-decoration: none;
     color: #FFFFFF;
+}
+/*Responsif design*/
+@media (max-width: 700px){
+    .about .row .content-about h3{
+        font-size: 2rem;
+    }
+    .about .row .content-about p{
+        font-size: 1.3rem;
+    }
+    .about .row {
+        justify-content: center;
+        text-align: center;
+    }
+    .about .row .content-about {
+        flex: 1 1 100%;
+    }
+    .heading{
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
 }

@@ -144,6 +144,7 @@ section{
     max-width: 100%;
     height: 100%;
     object-fit: cover;
+    border: 1px solid #d90429;
 }
 .about .row .content-about{
     flex: 1 1 40rem;
@@ -158,6 +159,7 @@ section{
      padding: .5rem 0;
      padding-top: 1rem;
      line-height: 1.5;
+    width: 70%;
  }
 /*icons container*/
 .icons-container{
@@ -278,11 +280,20 @@ footer a{
     }
 }
 @media (max-width: 768px){
+    .home-text h1{
+        font-size: 2.5rem;
+    }
+    .home-text p{
+        font-size: 1rem;
+        font-weight: 300;
+        margin: 0.5rem 0 1.2rem;
+    }
     .about .row .content-about h3{
         font-size: 2rem;
     }
     .about .row .content-about p{
         font-size: 1.3rem;
+        width: 100%;
     }
     .about .row {
         justify-content: center;

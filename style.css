@@ -342,4 +342,7 @@ footer a{
     .car-container .box{
         padding: 4px;
     }
+    .cars p{
+        font-size: 1rem;
+    }
 }

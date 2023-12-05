@@ -345,4 +345,7 @@ footer a{
     .cars p{
         font-size: 1rem;
     }
+    .about .heading span{
+        display: none;
+    }
 }

@@ -235,7 +235,7 @@ section{
     gap: 1rem;
 }
 .contact-container .logo{
-    margin: auto;
+    margin: 0 auto;
     color: #FFFFFF;
 }
 .contact-container .contact-box{

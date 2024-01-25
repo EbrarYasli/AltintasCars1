@@ -295,7 +295,7 @@ footer a{
         font-size: 1.3rem;
         width: 100%;
     }
-    .about .row {
+    .about .row h3{
         justify-content: center;
         text-align: center;
     }

@@ -24,7 +24,7 @@ window.onscroll = () =>{
     menu.classList.remove('active');
 }
 //new code for fade
-AOS.init({
-    duration: 3000,
-    once: true,
-});
+// AOS.init({
+//     duration: 3000,
+//     once: true,
+// });

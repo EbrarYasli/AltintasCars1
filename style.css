@@ -227,7 +227,7 @@ section{
 
 
 /*location pagina*/
-.location{
+/* .location{
     background-color: #000000;
     display: flex;
     justify-content: center;
@@ -239,7 +239,7 @@ section{
 iframe{
     filter: invert(100%);
     max-width: 100%;
-}
+} */
 /*contact pagina*/
 .contact{
     background: #0F0F0F;

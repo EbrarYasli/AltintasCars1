@@ -266,8 +266,14 @@ iframe{
 }
 .contact-box a{
     color: #818181;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
+
+.contact-box p{
+    color: #818181;
+    margin-bottom: 5px;
+}
+
 .contact-box a:hover{
     color: #d90429;
 }

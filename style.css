@@ -185,6 +185,16 @@ img {
     margin: 0 auto;
 }
 
+ .navbar .fa-xmark {
+    display: none;
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+        color: var(--text-primary);
+        font-size: 1.5rem;
+    }
+
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
@@ -1108,6 +1118,7 @@ footer {
     }
 
     .navbar .fa-xmark {
+        display: block;
         position: absolute;
         top: 25px;
         left: 25px;

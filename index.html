@@ -9,206 +9,437 @@
     <meta name="description" content="Altintas Cars biedt betrouwbare auto's te koop aan in Lommel. Ontdek onze hoogwaardige voertuigen, perfect onderhouden en klaar voor verkoop. Jouw partner in auto's in Lommel.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Schoolbell&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-          integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="icon" href="assets/logotab.ico" type="image/x-icon">
-
 </head>
 <body>
-<!--navbar-->
-<header>
-    <div class="nav container">
-        <i class="fa-solid fa-bars" id="menu-icon" onclick="openmenu()"></i>
-        <a href="#" class="logo">Altintas <span>Cars</span></a>
-        <ul class="navbar">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#cars">Cars</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <!-- Animated particles background -->
+    <div class="particles-bg">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
     </div>
-</header>
-<!--Home-->
-<main>
-    <section class="home" id="home">
-        <div class="home-text">
-            <h1>ALTINTAS CARS <br>JOUW <span>PARTNER</span> IN AUTOS</h1>
-            <p>Kopen en verkopen, Betrouwbaar en Efficiënt.</p>
-            <!--        Home button-->
-            <a href="#about" class="btn">About Us</a>
-        </div>
 
+    <!-- Navigation -->
+    <header id="header">
+        <div class="nav container">
+            <i class="fa-solid fa-bars" id="menu-icon" onclick="openmenu()"></i>
+            <a href="#" class="logo">Altintas <span>Cars</span></a>
+            <ul class="navbar" id="navbar">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#cars" class="nav-link">Cars</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <!-- <i class="fa-solid fa-xmark" onclick="closemenu()"></i> -->
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="home" id="home">
+            <div class="home-content">
+                <div class="home-text">
+                    <div class="greeting-tag">
+                        <span>Welkom bij Altintas Cars</span>
+                    </div>
+                    <h1>ALTINTAS CARS <br>JOUW <span class="highlight">PARTNER</span> IN AUTOS</h1>
+                    <p>Kopen en verkopen, Betrouwbaar en Efficiënt.</p>
+                    <div class="home-buttons">
+                        <a href="#about" class="btn primary">About Us</a>
+                        <a href="#cars" class="btn secondary">Bekijk Auto's</a>
+                    </div>
+                </div>
+                <!-- <div class="home-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Auto's Verkocht</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Tevreden Klanten</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Jaar Ervaring</div>
+                    </div>
+                </div> -->
+            </div>
+            
+            <!-- Scroll indicator -->
+            <!-- <div class="scroll-indicator">
+                <div class="scroll-arrow">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div> -->
+        </section>
+    </main>
+
+    <!-- Cars Section -->
+    <section class="cars" id="cars">
+        <div class="section-header fade-in">
+            <div class="section-tag">Onze Voertuigen</div>
+            <h1>Our Cars</h1>
+            <p>Ontdek onze collectie van hoogwaardige auto's, zorgvuldig geselecteerd voor kwaliteit en betrouwbaarheid.</p>
+        </div>
+        
+        <div class="car-container container">
+            <!-- Car 1 -->
+            <div class="car-card fade-in">
+                <div class="car-image-container">
+                    <a href="https://www.instagram.com/p/C30VuRHrX-s/?img_index=1" target="_blank">
+                        <img src="assets/car1.jpg" alt="Ford Focus ST te koop in Lommel, Altintas Cars" class="car-image">
+                        <div class="car-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-eye"></i>
+                                <span>Bekijk Details</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="price-badge">€ 17.950</div>
+                </div>
+                <div class="car-info">
+                    <h3>Ford Focus ST 1.5 180PK</h3>
+                    <div class="car-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-road"></i>
+                            <span>95.000 KM</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>2019</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Benzine</span>
+                        </div>
+                        <div class="spec-item lez-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>LEZ Toegestaan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Car 2 -->
+            <div class="car-card fade-in">
+                <div class="car-image-container">
+                    <a href="https://www.instagram.com/p/DAf_awCoolI/?img_index=1" target="_blank">
+                        <img src="assets/car2.jpg" alt="Volkswagen Golf 8 te koop in Lommel, Altintas Cars" class="car-image">
+                        <div class="car-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-eye"></i>
+                                <span>Bekijk Details</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="price-badge">€ 17.950</div>
+                </div>
+                <div class="car-info">
+                    <h3>Volkswagen Golf 8</h3>
+                    <div class="car-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-road"></i>
+                            <span>84.000 KM</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>2021</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Benzine</span>
+                        </div>
+                        <div class="spec-item lez-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>LEZ Toegestaan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Car 3 -->
+            <div class="car-card fade-in">
+                <div class="car-image-container">
+                    <a href="https://www.instagram.com/p/C56bW_CIzvC/?img_index=1" target="_blank">
+                        <img src="assets/car3.jpg" alt="Mercedes C180d te koop in Lommel, Altintas Cars" class="car-image">
+                        <div class="car-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-eye"></i>
+                                <span>Bekijk Details</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="price-badge">€ 15.950</div>
+                </div>
+                <div class="car-info">
+                    <h3>Mercedes C180d</h3>
+                    <div class="car-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-road"></i>
+                            <span>135.000 KM</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>2018</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Diesel</span>
+                        </div>
+                        <div class="spec-item lez-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>LEZ Toegestaan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Car 4 -->
+            <div class="car-card fade-in">
+                <div class="car-image-container">
+                    <a href="https://www.instagram.com/p/C6s9nrAIDZ1/?img_index=1" target="_blank">
+                        <img src="assets/car4.jpg" alt="Fiat 500 Lounge te koop in Lommel, Altintas Cars" class="car-image">
+                        <div class="car-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-eye"></i>
+                                <span>Bekijk Details</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="price-badge">€ 8.950</div>
+                </div>
+                <div class="car-info">
+                    <h3>Fiat 500 Lounge</h3>
+                    <div class="car-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-road"></i>
+                            <span>85.000 KM</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>2017</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Benzine</span>
+                        </div>
+                        <div class="spec-item lez-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>LEZ Toegestaan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Car 5 -->
+            <div class="car-card fade-in">
+                <div class="car-image-container">
+                    <a href="https://www.instagram.com/p/C-akfZAoEYX/?img_index=1" target="_blank">
+                        <img src="assets/car5.jpg" alt="Peugeot 208 te koop in Lommel, Altintas Cars" class="car-image">
+                        <div class="car-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-eye"></i>
+                                <span>Bekijk Details</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="price-badge">€ 8.750</div>
+                </div>
+                <div class="car-info">
+                    <h3>Peugeot 208</h3>
+                    <div class="car-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-road"></i>
+                            <span>85.000 KM</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>2019</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Benzine</span>
+                        </div>
+                        <div class="spec-item lez-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>LEZ Toegestaan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Car 6 -->
+            <div class="car-card fade-in">
+                <div class="car-image-container">
+                    <a href="https://www.instagram.com/p/C6mEmKGImu3/?img_index=1" target="_blank">
+                        <img src="assets/car6.jpg" alt="Ford Fiesta 1.0 te koop in Lommel, Altintas Cars" class="car-image">
+                        <div class="car-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-eye"></i>
+                                <span>Bekijk Details</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="price-badge">€ 6.950</div>
+                </div>
+                <div class="car-info">
+                    <h3>Ford Fiesta 1.0</h3>
+                    <div class="car-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-road"></i>
+                            <span>155.000 KM</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>2016</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Benzine</span>
+                        </div>
+                        <div class="spec-item lez-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>LEZ Toegestaan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-</main>
-<!--cars-->
-<section class="cars" id="cars">
-    <div class="heading" data-aos="fade-up" data-aos-duration="1000"  data-aos-once="true" >
-        <h1>Our Cars</h1>
-        <p>Ontdek onze collectie van hoogwaardige auto's.</p>
-    </div>
-    <div class="car-container container">
-        <!--        box1-->
-        <div class="box" data-aos="zoom-in" data-aos-duration="1000"  data-aos-once="true">
-            <a href="https://www.instagram.com/p/C30VuRHrX-s/?img_index=1"><img src="assets/car1.jpg" alt="Ford Focus ST te koop in Lommel, Altintas Cars"></a>
-            <span>€ 17.950,00</span>
-            <h3> Ford Focus ST 1.5 180PK</h3>
-            <ul class="car-list">
-                <li>• KM: 95000</li>
-                <li>• Bouwjaar : 2019</li>
-                <li>• Brandstof : Benzine</li>
-                <li>• Wagen mag in alle LEZ - Zone’s </li>
-            </ul>
-        </div>
-        <!--        box 2-->
-        <div class="box" data-aos="zoom-in" data-aos-duration="1000"  data-aos-once="true">
-            <a href="https://www.instagram.com/p/DAf_awCoolI/?img_index=1"><img src="assets/car2.jpg" alt="Volkswagen Golf 8 te koop in Lommel, Altintas Cars"></a>
-            <span>€ 17.950,00</span>
-            <h3>Volkswagen Golf 8</h3>
-            <ul class="car-list">
-                <li>• KM: 84 000</li>
-                <li>• Bouwjaar : 2021</li>
-                <li>• Brandstof : Benzine</li>
-                <li>• Wagen mag in alle LEZ - Zone’s </li>
-            </ul>
-        </div>
-        <!--        box 3-->
-        <div class="box" data-aos="zoom-in" data-aos-duration="1000"  data-aos-once="true">
-            <a href="https://www.instagram.com/p/C56bW_CIzvC/?img_index=1"><img src="assets/car3.jpg" alt="Mercedes C180d te koop in Lommel, Altintas Cars"></a>
-            <span>€ 15.950,00</span>
-            <h3>Mercedes C180d
-            </h3>
-            <ul class="car-list">
-                <li>• KM:  135 000</li>
-                <li>• Bouwjaar: 2018</li>
-                <li>• Brandstof : Diesel</li>
-                <li>• Wagen mag in alle LEZ - Zone’s  </li>
-            </ul>
-        </div>
-    </div>
-    <div class="car-container container">
-        <!--        box 4-->
-        <div class="box" data-aos="zoom-in" data-aos-duration="1000"  data-aos-once="true">
-            <a href="https://www.instagram.com/p/C6s9nrAIDZ1/?img_index=1"><img src="assets/car4.jpg" alt="Fiat 500 Lounge te koop in Lommel, Altintas Cars"></a>
-            <span>€ 8.950,00</span>
-            <h3>Fiat 500 Lounge
-            </h3>
-            <ul class="car-list">
-                <li>• KM:  85 000</li>
-                <li>• Bouwjaar: 2017/12</li>
-                <li>• Brandstof : Benzine</li>
-                <li>• Wagen mag in alle LEZ - Zone’s  </li>
-            </ul>
-        </div>
-        <!--        box 5-->
-        <div class="box" data-aos="zoom-in" data-aos-duration="1000"  data-aos-once="true">
-            <a href="https://www.instagram.com/p/C-akfZAoEYX/?img_index=1"><img src="assets/car5.jpg" alt="Peugeot 208 te koop in Lommel, Altintas Cars"></a>
-            <span>€ 8.750,00</span>
-            <h3>Peugeot 208
-            </h3>
-            <ul class="car-list">
-                <li>• KM:  85 000</li>
-                <li>• Bouwjaar: 2019</li>
-                <li>• Brandstof : Benzine</li>
-                <li>• Wagen mag in alle LEZ - Zone’s  </li>
-            </ul>
-        </div>
-        <!--        box 6-->
-        <div class="box" data-aos="zoom-in" data-aos-duration="1000"  data-aos-once="true">
-            <a href="https://www.instagram.com/p/C6mEmKGImu3/?img_index=1"><img src="assets/car6.jpg" alt="Ford Fiesta 1.0 te koop in Lommel, Altintas Cars"></a>
-            <span>€ 6.950,00</span>
-            <h3>Ford Fiesta 1.0
-            </h3>
-            <ul class="car-list">
-                <li>• KM:  155 000</li>
-                <li>• Bouwjaar: 2016</li>
-                <li>• Brandstof : Benzine</li>
-                <li>• Wagen mag in alle LEZ - Zone’s  </li>
-            </ul>
-        </div>
-    </div>
-</section>
-<!--About-->
-<section class="about" id="about">
-    <div class="heading" data-aos="fade-up" data-aos-duration="1000"  data-aos-once="true">
-        <h1>About Us</h1>
-        <span>WHO ARE WE?</span>
-    </div>
-    <div class="row">
-        <div class="content-about">
-            <h3>About Us</h3>
-            <p>Bij Altintas Cars, een familiebedrijf met diepgewortelde waarden, staat betrouwbaarheid en kwaliteit centraal. Wij zijn toegewijd aan het bieden van auto's die niet alleen vervoermiddelen zijn, maar ook deel uitmaken van jouw familieverhaal. Vertrouw op ons vakmanschap en service voor een rijervaring die de tand des tijds doorstaat, omdat wij geloven in het bouwen van relaties zo sterk als onze voertuigen.</p>
-        </div>
-        <div class="foto-container">
-            <img src="assets/Erhan_Logo_Zwart.jpg" alt="Logo van AltintasCars">
-        </div>
-    </div>
-</section>
-<!--    icons pagina-->
-<section class="icons-container">
-    <div class="icons">
-        <i class="fa-solid fa-car" style="color: #d90429;"></i>
-        <div class="info">
-            <h3>Aankoop & Verkoop</h3>
-            <span>Wij kopen en verkopen auto's</span>
-        </div>
-    </div>
-    <div class="icons">
-        <i class="fa-solid fa-money-bill-wave" style="color: #d90429;"></i>
-        <div class="info">
-            <h3>Overname</h3>
-            <span>Wij doen overname van auto's</span>
-        </div>
-    </div>
-    <div class="icons">
-        <i class="fa-solid fa-check" style="color: #d90429;"></i>
-        <div class="info">
-            <h3>Keuring</h3>
-            <span>Wij keuren auto's</span>
-        </div>
-    </div>
-</section>
-<!--formulier-->
 
-<!--location-->
-<!-- <section class="location" id="location">
-    <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2498.4029802927384!2d5.290897277087541!3d51.230072871751666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6d33cfae849f3%3A0xea0f54b0b4df22f3!2sAltintas%20cars!5e0!3m2!1sen!2sbe!4v1706909527304!5m2!1sen!2sbe" width="2000" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
-</section> -->
-<!--contact pagina-->
-<section class="contact" id="contact">
-    <div class="contact-container container">
-        <div class="contact-box">
-            <h1 class="logo">Altintas <span>Cars</span></h1>
-            <p>Hees 112, 3920 Lommel</p>
-            <p>BTW: BE0804 915 502</p>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-header fade-in">
+            <div class="section-tag">Over Ons</div>
+            <h1>About Us</h1>
+            <span class="subtitle">WHO ARE WE?</span>
         </div>
-        <div class="contact-box">
-            <h3>Page</h3>
-            <a href="#home">Home</a>
-            <a href="#cars">Cars</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+        
+        <div class="about-content">
+            <div class="about-text fade-in">
+                <h3>Jouw Betrouwbare Partner</h3>
+                <p>Bij <strong class="brand-highlight">Altintas Cars</strong>, een familiebedrijf met diepgewortelde waarden, staat betrouwbaarheid en kwaliteit centraal. Wij zijn toegewijd aan het bieden van auto's die niet alleen vervoermiddelen zijn, maar ook deel uitmaken van jouw familieverhaal.</p>
+                
+                <p>Vertrouw op ons vakmanschap en service voor een rijervaring die de tand des tijds doorstaat, omdat wij geloven in het bouwen van relaties zo sterk als onze voertuigen.</p>
+                
+                <div class="about-features">
+                    <div class="feature-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Gecertificeerde Kwaliteit</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-handshake"></i>
+                        <span>Persoonlijke Service</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Betrouwbare Garantie</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-image fade-in">
+                <div class="image-wrapper">
+                    <img src="assets/Erhan_Logo_Zwart.jpg" alt="Logo van AltintasCars">
+                    <div class="image-backdrop"></div>
+                </div>
+            </div>
         </div>
-        <div class="contact-box">
-            <h3>Contact</h3>
-            <a href="https://www.facebook.com/marketplace/profile/100005918738137/?ref=permalink" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com/altintas.cars/" target="_blank">Instagram</a>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="services-container">
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fa-solid fa-car"></i>
+                </div>
+                <div class="service-info">
+                    <h3>Aankoop & Verkoop</h3>
+                    <p>Professionele aan- en verkoop van kwaliteitsvoertuigen</p>
+                </div>
+            </div>
+            
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                </div>
+                <div class="service-info">
+                    <h3>Overname</h3>
+                    <p>Eerlijke waardebepaling en snelle overname</p>
+                </div>
+            </div>
+            
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <div class="service-info">
+                    <h3>Keuring</h3>
+                    <p>Uitgebreide technische keuring en documentatie</p>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
-<!--    footer-->
-<footer>
-    <p><a href="https://ebraryasli.netlify.app/" target="_blank">Made By <span>Ebrar Yasli</span></a></p>
-</footer>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    AOS.init({
-        duration: 3000,
-        once: true,
-    });
-</script>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container container">
+            <div class="contact-info fade-in">
+                <h2 class="logo">Altintas <span>Cars</span></h2>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Adres</h4>
+                            <p>Hees 112, 3920 Lommel</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-id-card"></i>
+                        <div>
+                            <h4>BTW Nummer</h4>
+                            <p>BE0804 915 502</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-links fade-in">
+                <h3>Navigatie</h3>
+                <div class="link-grid">
+                    <a href="#home">Home</a>
+                    <a href="#cars">Cars</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            
+            <div class="contact-social fade-in">
+                <h3>Volg Ons</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/marketplace/profile/100005918738137/?ref=permalink" target="_blank" class="social-link">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/altintas.cars/" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p><a href="https://ebraryasli.netlify.app/" target="_blank">Made By <span>Ebrar Yasli</span></a></p>
+        </div>
+    </footer>
 </body>
 </html>

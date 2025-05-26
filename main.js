@@ -203,7 +203,7 @@ function openmenu() {
     backdrop.style.cssText = `
         position: fixed;
         top: 0;
-        right: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.5);
@@ -642,3 +642,66 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.opacity = '1';
     }, 100);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetchCarsFromBackend();
+});
+
+async function fetchCarsFromBackend() {
+    const carList = document.getElementById('car-list');
+    if (!carList) return;
+
+    carList.innerHTML = '<div class="loading">Auto\'s aan het laden...</div>';
+
+    try {
+        const res = await fetch('https://altintascars-backend.onrender.com/api/admin/cars/public');
+        const data = await res.json();
+
+        if (!res.ok) throw new Error(data.message || 'Fout bij ophalen.');
+
+        if (!data.cars || data.cars.length === 0) {
+            carList.innerHTML = '<p>Geen auto\'s beschikbaar momenteel.</p>';
+            return;
+        }
+
+        carList.innerHTML = '';
+        data.cars.forEach(car => {
+            const imageUrl = car.imageUrl.startsWith('http')
+                ? car.imageUrl
+                : `https://altintascars-backend.onrender.com${car.imageUrl}`;
+
+            const card = document.createElement('div');
+            card.className = 'car-card fade-in';
+            card.innerHTML = `
+                <div class="car-image-container">
+                    <a href="${car.instagram}" target="_blank">
+                        <img src="${imageUrl}" alt="${car.model}" class="car-image">
+                        <div class="car-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-eye"></i>
+                                <span>Bekijk Details</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="price-badge">€ ${Number(car.price).toLocaleString('nl-BE')}</div>
+                </div>
+                <div class="car-info">
+                    <h3>${car.model}</h3>
+                    <div class="car-specs">
+                        <div class="spec-item"><i class="fas fa-road"></i><span>${Number(car.kilometers).toLocaleString('nl-BE')} KM</span></div>
+                        <div class="spec-item"><i class="fas fa-calendar"></i><span>${car.year}</span></div>
+                        <div class="spec-item"><i class="fas fa-gas-pump"></i><span>${car.fuel}</span></div>
+                        <div class="spec-item lez-badge"><i class="fas fa-shield-alt"></i><span>${car.lez}</span></div>
+                    </div>
+                </div>
+            `;
+            carList.appendChild(card);
+        });
+
+    } catch (err) {
+        console.error(err);
+        carList.innerHTML = '<p>Er ging iets mis bij het laden van de auto\'s.</p>';
+    }
+    initScrollAnimations();
+
+}

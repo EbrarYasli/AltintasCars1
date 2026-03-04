@@ -1,224 +1,284 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <title>Altintas Cars - Betrouwbare Auto's te koop in Lommel</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="main.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Altintas Cars biedt betrouwbare auto's te koop aan in Lommel. Ontdek onze hoogwaardige voertuigen, perfect onderhouden en klaar voor verkoop. Jouw partner in auto's in Lommel.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/logotab.ico" type="image/x-icon">
+    <script defer src="main.js"></script>
 </head>
 <body>
-    <!-- Animated particles background -->
-    <div class="particles-bg">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
 
     <!-- Navigation -->
     <header id="header">
-        <div class="nav container">
-            <i class="fa-solid fa-bars" id="menu-icon" onclick="openmenu()"></i>
-            <a href="#" class="logo">Altintas <span>Cars</span></a>
+        <nav class="nav-wrapper">
+            <a href="#" class="logo">ALTINTAS <span>CARS</span></a>
             <ul class="navbar" id="navbar">
                 <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#cars" class="nav-link">Cars</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#cars" class="nav-link">Auto's</a></li>
+                <li><a href="#about" class="nav-link">Over Ons</a></li>
+                <li><a href="#services" class="nav-link">Diensten</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
-                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                <i class="fa-solid fa-xmark nav-close" onclick="closemenu()"></i>
             </ul>
-        </div>
+            <div class="nav-right">
+                <a href="#contact" class="nav-cta">Contact</a>
+                <i class="fa-solid fa-bars" id="menu-icon" onclick="openmenu()"></i>
+            </div>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <main>
-        <section class="home" id="home">
-            <div class="home-content">
-                <div class="home-text">
-                    <div class="greeting-tag">
-                        <span>Welkom bij Altintas Cars</span>
-                    </div>
-                    <h1>ALTINTAS CARS <br>JOUW <span class="highlight">PARTNER</span> IN AUTOS</h1>
-                    <p>Kopen en verkopen, Betrouwbaar en Efficiënt.</p>
-                    <div class="home-buttons">
-                        <a href="#about" class="btn primary">About Us</a>
-                        <a href="#cars" class="btn secondary">Bekijk Auto's</a>
-                    </div>
-                </div>
-                <!-- <div class="home-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Auto's Verkocht</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Tevreden Klanten</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Jaar Ervaring</div>
-                    </div>
-                </div> -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <img src="assets/Altintas_Background.jpg" alt="Altintas Cars achtergrond">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-label">ALTINTAS CARS LOMMEL</span>
+            <h1 class="hero-title">
+                WAAR KWALITEIT
+                <em>BEGINT</em>
+            </h1>
+            <p class="hero-subtitle">Professionele aan- en verkoop van kwaliteitsvoertuigen in het hart van Lommel. Ervaar het verschil van betrouwbaarheid en vakmanschap.</p>
+            <div class="hero-actions">
+                <a href="#cars" class="btn-primary">
+                    BEKIJK AUTO'S
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#about" class="btn-outline">
+                    OVER ONS
+                </a>
             </div>
-            
-            <!-- Scroll indicator -->
-            <!-- <div class="scroll-indicator">
-                <div class="scroll-arrow">
-                    <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-text">Auto's Verkocht</span>
                 </div>
-            </div> -->
-        </section>
-    </main>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-text">Tevreden Klanten</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-text">Jaar Ervaring</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Cars Section -->
-    <section class="cars" id="cars">
-        <div class="section-header fade-in">
-            <div class="section-tag">Onze Voertuigen</div>
-            <h1>Our Cars</h1>
-            <p>Ontdek onze collectie van hoogwaardige auto's, zorgvuldig geselecteerd voor kwaliteit en betrouwbaarheid.</p>
+    <section class="section cars-section" id="cars">
+        <div class="section-bg-text" aria-hidden="true">AUTO'S</div>
+        <div class="container">
+            <div class="section-intro">
+                <span class="section-label">ONZE VOERTUIGEN</span>
+                <h2 class="section-title">Ontdek Onze <em>Collectie</em></h2>
+                <p class="section-desc">Zorgvuldig geselecteerd voor kwaliteit en betrouwbaarheid. Elk voertuig vertelt zijn eigen verhaal.</p>
+                <div class="section-line"></div>
+            </div>
+            <div class="car-grid" id="car-list"></div>
         </div>
-        
-     <div class="car-container container" id="car-list"></div>
-
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
-        <div class="section-header fade-in">
-            <div class="section-tag">Over Ons</div>
-            <h1>About Us</h1>
-            <span class="subtitle">WHO ARE WE?</span>
+    <section class="section about-section" id="about">
+        <div class="section-bg-text" aria-hidden="true">OVER ONS</div>
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual">
+                    <div class="about-img-wrapper">
+                        <img src="assets/Erhan_Logo_Zwart.jpg" alt="Logo van AltintasCars">
+                    </div>
+                    <div class="about-accent"></div>
+                    <div class="about-badge">
+                        <span class="badge-number">5+</span>
+                        <span class="badge-text">Jaar<br>Ervaring</span>
+                    </div>
+                </div>
+                <div class="about-body">
+                    <span class="section-label">OVER ONS</span>
+                    <h2 class="section-title">Jouw Betrouwbare <em>Partner</em></h2>
+                    <div class="about-line"></div>
+                    <p>Bij <strong>Altintas Cars</strong>, een familiebedrijf met diepgewortelde waarden, staat betrouwbaarheid en kwaliteit centraal. Wij zijn toegewijd aan het bieden van auto's die niet alleen vervoermiddelen zijn, maar ook deel uitmaken van jouw familieverhaal.</p>
+                    <p>Vertrouw op ons vakmanschap en service voor een rijervaring die de tand des tijds doorstaat, omdat wij geloven in het bouwen van relaties zo sterk als onze voertuigen.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div>
+                                <strong>Gecertificeerde Kwaliteit</strong>
+                                <span>Elk voertuig grondig gecontroleerd</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div>
+                                <strong>Persoonlijke Service</strong>
+                                <span>Advies op maat voor elke klant</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <strong>Betrouwbare Garantie</strong>
+                                <span>Zekerheid bij elke aankoop</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="about-content">
-            <div class="about-text fade-in">
-                <h3>Jouw Betrouwbare Partner</h3>
-                <p>Bij <strong class="brand-highlight">Altintas Cars</strong>, een familiebedrijf met diepgewortelde waarden, staat betrouwbaarheid en kwaliteit centraal. Wij zijn toegewijd aan het bieden van auto's die niet alleen vervoermiddelen zijn, maar ook deel uitmaken van jouw familieverhaal.</p>
-                
-                <p>Vertrouw op ons vakmanschap en service voor een rijervaring die de tand des tijds doorstaat, omdat wij geloven in het bouwen van relaties zo sterk als onze voertuigen.</p>
-                
-                <div class="about-features">
-                    <div class="feature-item">
-                        <i class="fas fa-certificate"></i>
-                        <span>Gecertificeerde Kwaliteit</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-handshake"></i>
-                        <span>Persoonlijke Service</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Betrouwbare Garantie</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="about-image fade-in">
-                <div class="image-wrapper">
-                    <img src="assets/Erhan_Logo_Zwart.jpg" alt="Logo van AltintasCars">
-                    <div class="image-backdrop"></div>
-                </div>
-            </div>
+    </section>
+
+    <!-- Parallax Image Break -->
+    <section class="parallax-break">
+        <div class="parallax-bg">
+            <img src="assets/Altintas_Background.jpg" alt="">
+        </div>
+        <div class="parallax-overlay"></div>
+        <div class="parallax-content">
+            <span class="parallax-label">ALTINTAS CARS</span>
+            <h2>Kwaliteit die je kunt <em>vertrouwen</em></h2>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services">
-        <div class="services-container">
-            <div class="service-card fade-in">
-                <div class="service-icon">
-                    <i class="fa-solid fa-car"></i>
-                </div>
-                <div class="service-info">
+    <section class="section services-section" id="services">
+        <div class="section-bg-text" aria-hidden="true">DIENSTEN</div>
+        <div class="container">
+            <div class="section-intro">
+                <span class="section-label">ONZE DIENSTEN</span>
+                <h2 class="section-title">Wat Wij <em>Bieden</em></h2>
+                <p class="section-desc">Van aankoop tot keuring, wij staan klaar met een volledig aanbod aan diensten.</p>
+                <div class="section-line"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <div class="service-icon-wrap">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
                     <h3>Aankoop & Verkoop</h3>
-                    <p>Professionele aan- en verkoop van kwaliteitsvoertuigen</p>
+                    <p>Professionele aan- en verkoop van kwaliteitsvoertuigen met transparante afhandeling.</p>
                 </div>
-            </div>
-            
-            <div class="service-card fade-in">
-                <div class="service-icon">
-                    <i class="fa-solid fa-money-bill-wave"></i>
-                </div>
-                <div class="service-info">
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <div class="service-icon-wrap">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                    </div>
                     <h3>Overname</h3>
-                    <p>Eerlijke waardebepaling en snelle overname</p>
+                    <p>Eerlijke waardebepaling en snelle overname van uw huidige voertuig.</p>
                 </div>
-            </div>
-            
-            <div class="service-card fade-in">
-                <div class="service-icon">
-                    <i class="fa-solid fa-check"></i>
-                </div>
-                <div class="service-info">
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <div class="service-icon-wrap">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
                     <h3>Keuring</h3>
-                    <p>Uitgebreide technische keuring en documentatie</p>
+                    <p>Uitgebreide technische keuring en volledige documentatie voor uw gemoedsrust.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="contact-container container">
-            <div class="contact-info fade-in">
-                <h2 class="logo">Altintas <span>Cars</span></h2>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Adres</h4>
-                            <p>Hees 112, 3920 Lommel</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-id-card"></i>
-                        <div>
-                            <h4>BTW Nummer</h4>
-                            <p>BE0804 915 502</p>
-                        </div>
-                    </div>
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <span class="section-label">INTERESSE?</span>
+                    <h2>Op zoek naar uw volgende <em>auto?</em></h2>
+                    <p>Neem vandaag nog contact met ons op en ontdek wat wij voor u kunnen betekenen.</p>
                 </div>
-            </div>
-            
-            <div class="contact-links fade-in">
-                <h3>Navigatie</h3>
-                <div class="link-grid">
-                    <a href="#home">Home</a>
-                    <a href="#cars">Cars</a>
-                    <a href="#about">About</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
-            
-            <div class="contact-social fade-in">
-                <h3>Volg Ons</h3>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/marketplace/profile/100005918738137/?ref=permalink" target="_blank" class="social-link">
-                        <i class="fab fa-facebook"></i>
-                        <span>Facebook</span>
-                    </a>
-                    <a href="https://www.instagram.com/altintas.cars/" target="_blank" class="social-link">
-                        <i class="fab fa-instagram"></i>
-                        <span>Instagram</span>
+                <div class="cta-actions">
+                    <a href="https://www.instagram.com/altintas.cars/" target="_blank" class="btn-primary">
+                        NEEM CONTACT OP
+                        <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <p><a href="https://ebodigital.be/" target="_blank">Made By <span>Ebo Digital</span></a></p>
+    <!-- Contact / Footer Section -->
+    <footer class="footer-section" id="contact">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="#" class="logo">ALTINTAS <span>CARS</span></a>
+                        <p>Uw betrouwbare partner voor kwaliteitsvoertuigen in Lommel. Kwaliteit en vertrouwen staan bij ons centraal.</p>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/marketplace/profile/100005918738137/?ref=permalink" target="_blank" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/altintas.cars/" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-nav">
+                        <h4>Navigatie</h4>
+                        <a href="#home">Home</a>
+                        <a href="#cars">Auto's</a>
+                        <a href="#about">Over Ons</a>
+                        <a href="#services">Diensten</a>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact</h4>
+                        <div class="footer-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Hees 112, 3920 Lommel</span>
+                        </div>
+                        <div class="footer-info">
+                            <i class="fas fa-id-card"></i>
+                            <span>BTW: BE0804 915 502</span>
+                        </div>
+                    </div>
+                    <div class="footer-hours">
+                        <h4>Openingsuren</h4>
+                        <div class="footer-info">
+                            <i class="fas fa-clock"></i>
+                            <span>Op afspraak</span>
+                        </div>
+                        <div class="footer-info">
+                            <i class="fas fa-phone"></i>
+                            <span>Contacteer via social media</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p><a href="https://ebodigital.be/" target="_blank">Made by <span>Ebo Digital</span></a></p>
+            </div>
         </div>
     </footer>
+
 </body>
 </html>

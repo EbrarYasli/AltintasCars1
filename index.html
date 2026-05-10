@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/logotab.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.1.13/dist/lenis.min.js"></script>
     <script defer src="main.js"></script>
 </head>
 <body>
@@ -21,8 +22,8 @@
             <a href="#" class="logo">ALTINTAS <span>CARS</span></a>
             <ul class="navbar" id="navbar">
                 <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#cars" class="nav-link">Auto's</a></li>
                 <li><a href="#about" class="nav-link">Over Ons</a></li>
+                <li><a href="#cars" class="nav-link">Auto's</a></li>
                 <li><a href="#services" class="nav-link">Diensten</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
                 <i class="fa-solid fa-xmark nav-close" onclick="closemenu()"></i>
@@ -37,7 +38,10 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-bg">
-            <img src="assets/Altintas_Background.jpg" alt="Altintas Cars achtergrond">
+            <video autoplay muted playsinline poster="assets/Altintas_Background.jpg" id="hero-video">
+                <source src="assets/hf_20260510_075348_845b70a3-a708-4d08-a871-54c18ef4b87b.mp4" type="video/mp4">
+                <img src="assets/Altintas_Background.jpg" alt="Altintas Cars achtergrond">
+            </video>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -82,20 +86,6 @@
                     <span class="stat-text">Jaar Ervaring</span>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Cars Section -->
-    <section class="section cars-section" id="cars">
-        <div class="section-bg-text" aria-hidden="true">AUTO'S</div>
-        <div class="container">
-            <div class="section-intro">
-                <span class="section-label">ONZE VOERTUIGEN</span>
-                <h2 class="section-title">Ontdek Onze <em>Collectie</em></h2>
-                <p class="section-desc">Zorgvuldig geselecteerd voor kwaliteit en betrouwbaarheid. Elk voertuig vertelt zijn eigen verhaal.</p>
-                <div class="section-line"></div>
-            </div>
-            <div class="car-grid" id="car-list"></div>
         </div>
     </section>
 
@@ -154,15 +144,56 @@
         </div>
     </section>
 
-    <!-- Parallax Image Break -->
-    <section class="parallax-break">
-        <div class="parallax-bg">
-            <img src="assets/Altintas_Background.jpg" alt="">
+    <!-- Scroll Showcase: 360° rotating car (image sequence on canvas) -->
+    <section class="showcase-section" id="showcase">
+        <div class="showcase-sticky">
+            <div class="showcase-video-wrap">
+                <canvas class="showcase-canvas" id="showcase-canvas"></canvas>
+            </div>
+            <div class="showcase-overlay"></div>
+            <div class="showcase-content">
+                <span class="section-label">EXCLUSIEVE COLLECTIE</span>
+                <h2 class="showcase-title">Elk Detail <em>Telt</em></h2>
+                <div class="showcase-phrases" id="showcase-phrases">
+                    <span class="phrase active">Vakmanschap</span>
+                    <span class="phrase">Precisie</span>
+                    <span class="phrase">Elegantie</span>
+                    <span class="phrase">Karakter</span>
+                    <span class="phrase">Vertrouwen</span>
+                </div>
+            </div>
+            <div class="showcase-hint">
+                <i class="fa-solid fa-arrow-down"></i>
+            </div>
         </div>
-        <div class="parallax-overlay"></div>
-        <div class="parallax-content">
-            <span class="parallax-label">ALTINTAS CARS</span>
-            <h2>Kwaliteit die je kunt <em>vertrouwen</em></h2>
+    </section>
+
+    <!-- Cars Section -->
+    <section class="section cars-section" id="cars">
+        <div class="section-bg-text" aria-hidden="true">AUTO'S</div>
+        <div class="container">
+            <div class="section-intro">
+                <span class="section-label">ONZE VOERTUIGEN</span>
+                <h2 class="section-title">Ontdek Onze <em>Collectie</em></h2>
+                <p class="section-desc">Zorgvuldig geselecteerd voor kwaliteit en betrouwbaarheid. Elk voertuig vertelt zijn eigen verhaal.</p>
+                <div class="section-line"></div>
+            </div>
+            <div class="car-grid" id="car-list"></div>
+        </div>
+    </section>
+
+    <!-- Parallax Image Break -->
+    <!-- Spinning wheel divider -->
+    <section class="wheel-divider" id="wheel-divider">
+        <div class="wheel-sticky">
+            <div class="wheel-canvas-wrap">
+                <canvas class="wheel-canvas" id="wheel-canvas"></canvas>
+            </div>
+            <div class="wheel-content">
+                <span class="wheel-label">ALTINTAS CARS</span>
+                <h2 class="wheel-title">Kwaliteit die je kunt <em>vertrouwen</em></h2>
+                <p class="wheel-desc">Beweging is alles. Vakmanschap is wat ons drijft.</p>
+            </div>
         </div>
     </section>
 
@@ -275,7 +306,10 @@
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p><a href="https://ebodigital.be/" target="_blank">Made by <span>Ebo Digital</span></a></p>
+                <a href="https://ebodigital.be/" target="_blank" class="ebo-credit">
+                    <span>Made by</span>
+                    <img src="assets/EboDigital.png" alt="Ebo Digital">
+                </a>
             </div>
         </div>
     </footer>

@@ -1,6 +1,9 @@
 // Altintas Cars - Modern JS
 
+let lenis = null;
+
 document.addEventListener('DOMContentLoaded', () => {
+    initLenis();
     initNav();
     initSmoothScroll();
     initScrollAnimations();
@@ -8,7 +11,270 @@ document.addEventListener('DOMContentLoaded', () => {
     initStatsCounter();
     fetchCarsFromBackend();
     initLoadingReveal();
+    initHeroVideo();
+    initShowcaseScrub();
+    initWheelScrub();
 });
+
+// --- Wheel divider: scroll-scrub spinning wheel on canvas ---
+function initWheelScrub() {
+    const section = document.getElementById('wheel-divider');
+    const canvas = document.getElementById('wheel-canvas');
+    if (!section || !canvas) return;
+
+    const FRAME_COUNT = 193;
+    const FRAME_PATH = (i) => `assets/wheel-frames/${String(i).padStart(4, '0')}.jpg`;
+
+    const ctx = canvas.getContext('2d');
+    const images = new Array(FRAME_COUNT);
+    let firstReady = false;
+    let framesLoading = false;
+
+    function fitCanvas() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = Math.floor(rect.width * dpr);
+        canvas.height = Math.floor(rect.height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function drawFrame(index) {
+        const img = images[index];
+        if (!img || !img.complete) return;
+        const cw = canvas.clientWidth;
+        const ch = canvas.clientHeight;
+        const iw = img.naturalWidth;
+        const ih = img.naturalHeight;
+        if (!iw || !ih) return;
+        const scale = Math.max(cw / iw, ch / ih);
+        const dw = iw * scale;
+        const dh = ih * scale;
+        const dx = (cw - dw) / 2;
+        const dy = (ch - dh) / 2;
+        ctx.fillStyle = '#0a0a0a';
+        ctx.fillRect(0, 0, cw, ch);
+        ctx.drawImage(img, dx, dy, dw, dh);
+    }
+
+    function currentProgress() {
+        const rect = section.getBoundingClientRect();
+        const sectionH = section.offsetHeight;
+        const viewportH = window.innerHeight;
+        const total = viewportH + sectionH;
+        const traveled = viewportH - rect.top;
+        return Math.max(0, Math.min(1, traveled / total));
+    }
+
+    function currentFrameIndex() {
+        return Math.min(FRAME_COUNT - 1, Math.floor(currentProgress() * FRAME_COUNT));
+    }
+
+    let rafScheduled = false;
+    function onScroll() {
+        if (rafScheduled) return;
+        rafScheduled = true;
+        requestAnimationFrame(() => {
+            rafScheduled = false;
+            drawFrame(currentFrameIndex());
+        });
+    }
+
+    function onResize() {
+        fitCanvas();
+        drawFrame(currentFrameIndex());
+    }
+
+    function loadAllFrames() {
+        if (framesLoading) return;
+        framesLoading = true;
+        for (let i = 0; i < FRAME_COUNT; i++) {
+            if (images[i]) continue;
+            const img = new Image();
+            img.src = FRAME_PATH(i + 1);
+            img.onload = () => {
+                if (!firstReady && i === 0) {
+                    firstReady = true;
+                    fitCanvas();
+                    drawFrame(0);
+                }
+                if (i === currentFrameIndex()) drawFrame(i);
+            };
+            img.onerror = () => {};
+            images[i] = img;
+        }
+    }
+
+    const lazyObserver = new IntersectionObserver((entries) => {
+        if (entries.some(e => e.isIntersecting)) {
+            loadAllFrames();
+            lazyObserver.disconnect();
+        }
+    }, { rootMargin: '600px 0px 600px 0px' });
+    lazyObserver.observe(section);
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize, { passive: true });
+    fitCanvas();
+}
+
+// --- Lenis: butter-smooth momentum scrolling ---
+function initLenis() {
+    if (typeof Lenis === 'undefined') return;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
+    lenis = new Lenis({
+        duration: 1.15,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        smoothTouch: false,
+        touchMultiplier: 1.5,
+        wheelMultiplier: 1
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+}
+
+// --- Hero video: freeze on last frame ---
+function initHeroVideo() {
+    const video = document.getElementById('hero-video');
+    if (!video) return;
+    video.addEventListener('ended', () => {
+        video.pause();
+        video.currentTime = video.duration;
+    });
+}
+
+// --- Showcase: image sequence scrub on canvas (Apple-style) ---
+function initShowcaseScrub() {
+    const section = document.getElementById('showcase');
+    const canvas = document.getElementById('showcase-canvas');
+    if (!section || !canvas) return;
+
+    const FRAME_COUNT = 193;
+    const FRAME_PATH = (i) => `assets/showcase-frames/${String(i).padStart(4, '0')}.jpg`;
+
+    const ctx = canvas.getContext('2d');
+    const images = new Array(FRAME_COUNT);
+    let firstReady = false;
+    let framesLoading = false;
+
+    function fitCanvas() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = Math.floor(rect.width * dpr);
+        canvas.height = Math.floor(rect.height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function drawFrame(index) {
+        const img = images[index];
+        if (!img || !img.complete) return;
+        const cw = canvas.clientWidth;
+        const ch = canvas.clientHeight;
+        const iw = img.naturalWidth;
+        const ih = img.naturalHeight;
+        if (!iw || !ih) return;
+        const scale = Math.max(cw / iw, ch / ih);
+        const dw = iw * scale;
+        const dh = ih * scale;
+        const dx = (cw - dw) / 2;
+        const dy = (ch - dh) / 2;
+        ctx.fillStyle = '#0a0a0a';
+        ctx.fillRect(0, 0, cw, ch);
+        ctx.drawImage(img, dx, dy, dw, dh);
+    }
+
+    function currentProgress() {
+        const rect = section.getBoundingClientRect();
+        const sectionH = section.offsetHeight;
+        const viewportH = window.innerHeight;
+        if (sectionH > viewportH) {
+            const scrollable = sectionH - viewportH;
+            const scrolled = -rect.top;
+            return Math.max(0, Math.min(1, scrolled / scrollable));
+        }
+        const total = viewportH + sectionH;
+        const traveled = viewportH - rect.top;
+        return Math.max(0, Math.min(1, traveled / total));
+    }
+
+    function currentFrameIndex() {
+        return Math.min(FRAME_COUNT - 1, Math.floor(currentProgress() * FRAME_COUNT));
+    }
+
+    const phrases = Array.from(document.querySelectorAll('#showcase-phrases .phrase'));
+    let activePhraseIndex = -1;
+
+    function setActivePhrase(idx) {
+        if (!phrases.length) return;
+        idx = Math.max(0, Math.min(phrases.length - 1, idx));
+        if (idx === activePhraseIndex) return;
+        phrases.forEach((el, i) => {
+            el.classList.remove('active', 'exit-up');
+            if (i < idx) el.classList.add('exit-up');
+            else if (i === idx) el.classList.add('active');
+        });
+        activePhraseIndex = idx;
+    }
+
+    function updatePhraseFromScroll() {
+        if (!phrases.length) return;
+        setActivePhrase(Math.floor(currentProgress() * phrases.length));
+    }
+
+    let rafScheduled = false;
+    function onScroll() {
+        if (rafScheduled) return;
+        rafScheduled = true;
+        requestAnimationFrame(() => {
+            rafScheduled = false;
+            drawFrame(currentFrameIndex());
+            updatePhraseFromScroll();
+        });
+    }
+
+    function onResize() {
+        fitCanvas();
+        drawFrame(currentFrameIndex());
+    }
+
+    function loadAllFrames() {
+        if (framesLoading) return;
+        framesLoading = true;
+        for (let i = 0; i < FRAME_COUNT; i++) {
+            if (images[i]) continue;
+            const img = new Image();
+            img.src = FRAME_PATH(i + 1);
+            img.onload = () => {
+                if (!firstReady && i === 0) {
+                    firstReady = true;
+                    fitCanvas();
+                    drawFrame(0);
+                }
+                if (i === currentFrameIndex()) drawFrame(i);
+            };
+            img.onerror = () => {};
+            images[i] = img;
+        }
+    }
+
+    const lazyObserver = new IntersectionObserver((entries) => {
+        if (entries.some(e => e.isIntersecting)) {
+            loadAllFrames();
+            lazyObserver.disconnect();
+        }
+    }, { rootMargin: '600px 0px 600px 0px' });
+    lazyObserver.observe(section);
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize, { passive: true });
+    fitCanvas();
+}
 
 // --- Navigation scroll effect ---
 function initNav() {
@@ -64,10 +330,14 @@ function initSmoothScroll() {
             if (!target) return;
             e.preventDefault();
             const headerH = document.getElementById('header')?.offsetHeight || 0;
-            window.scrollTo({
-                top: target.offsetTop - headerH,
-                behavior: 'smooth'
-            });
+            if (lenis) {
+                lenis.scrollTo(target, { offset: -headerH, duration: 1.4 });
+            } else {
+                window.scrollTo({
+                    top: target.offsetTop - headerH,
+                    behavior: 'smooth'
+                });
+            }
             closemenu();
         });
     });

@@ -208,6 +208,7 @@ img { display: block; max-width: 100%; height: auto; }
     position: absolute;
     inset: 0;
     z-index: 0;
+    background: #000;
 }
 
 .hero-bg img,
